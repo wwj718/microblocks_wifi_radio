@@ -53,12 +53,14 @@ class Radio:
         if data[3] != self._group:
             return False
 
-        the_number = data[4] | (data[5] << 8) | (data[6] << 16) | (data[7] << 24)
+        the_number = data[4] | ((data[5] << 8) | ((data[6] << 16) | (data[7] << 24)))
+        the_number = the_number if the_number < 2147483648 else the_number - 4294967296
         the_string = data[8:].decode("utf-8")  # Assuming the message is a bytes object
 
         return (the_number, the_string)
 
     def send_pair(self, s: str = "light", n: int = 10):
+        n = n if n >= 0 else n + 4294967296
         msg = bytearray()
         msg.extend(b"MBR")
         msg.append(self._group)

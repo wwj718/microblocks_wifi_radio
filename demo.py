@@ -5,7 +5,7 @@ r.send_number(123)
 time.sleep(1)
 r.send_string("hello")
 time.sleep(1)
-r.send_pair("light", 10)
+r.send_pair("light", -10)
 
 while True:
     time.sleep(0.01)
