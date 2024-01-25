@@ -59,6 +59,9 @@ class Radio:
 
         return (the_number, the_string)
 
+    def set_group(self, group):
+        self._group = group
+
     def send_pair(self, s: str = "light", n: int = 10):
         n = n if n >= 0 else n + 4294967296
         msg = bytearray()

@@ -1,6 +1,6 @@
 [tool.poetry]
 name = "microblocks_wifi_radio"
-version = "0.5.0"
+version = "0.6.0"
 description = ""
 authors = ["wwj718 <wuwenjie718@gmail.com>"]
 readme = "README.md"
